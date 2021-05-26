@@ -12,12 +12,14 @@
 
   <ItemGroup>
     <None Remove="Documents\alumnos.xml" />
+    <None Remove="Documents\EscenasPeliculas.xml" />
     <None Remove="Documents\prueba.txt" />
     <None Remove="Documents\series.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Documents\alumnos.xml" />
+    <EmbeddedResource Include="Documents\EscenasPeliculas.xml" />
     <EmbeddedResource Include="Documents\prueba.txt" />
     <EmbeddedResource Include="Documents\series.json" />
   </ItemGroup>
@@ -29,10 +31,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Templates\TemplatePeliculaListview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\AlumnosView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\EscenasView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\FicheroSimpleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PeliculasView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SeriesCarruselView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SeriesView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -5,18 +5,18 @@
       "imagen": "https://www.formulatv.com/images/series/posters/100/133/1_m3.jpg",  
       "valoracion": 5
     },
-    {
-      "idserie": 2,
-      "nombre": "Campeones",
-      "imagen": "http://static.t13.cl/images/sizes/1200x675/1539297133-oliver-y-benji.jpg",	  
-      "valoracion": 5
-    },
-    {
-      "idserie": 3,
-      "nombre": "Juego de Tronos",
-      "imagen": "http://es.web.img3.acsta.net/medias/nmedia/18/75/09/69/19692838.jpg",  
-      "valoracion": 5
-    },
+  {
+    "idserie": 2,
+    "nombre": "Campeones",
+    "imagen": "https://www.dibujos-animados.net/wp-content/uploads/2016/11/serie-oliver-benji-campeones.jpg",
+    "valoracion": 5
+  },
+  {
+    "idserie": 3,
+    "nombre": "Juego de Tronos",
+    "imagen": "https://as.com/epik/imagenes/2019/05/28/portada/1559062616_530707_1559062857_noticia_normal.jpg",
+    "valoracion": 5
+  },
     {
       "idserie": 4,
       "nombre": "Betty la Fea",
@@ -35,12 +35,12 @@
       "imagen": "https://cdn-images-1.medium.com/max/2600/1*5hOCsrDdpixslaiqJqhhTQ.jpeg",	  
       "valoracion": 3
     },
-    {
-      "idserie": 7,
-      "nombre": "The Big Bang Theory",
-      "imagen": "https://www.formulatv.com/images/series/posters/100/185/1_m3.jpg",	  
-      "valoracion": 5
-    },
+  {
+    "idserie": 7,
+    "nombre": "The Big Bang Theory",
+    "imagen": "https://www.icmedianet.org/wp/ndog/wp-content/uploads/2014/06/the-big-bang-theory.jpg",
+    "valoracion": 5
+  },
     {
       "idserie": 8,
       "nombre": "Black Mirror",
@@ -71,12 +71,12 @@
       "imagen": "https://okdiario.com/img/2019/04/05/las-grandes-curiosidades-de-peaky-blinders-655x368.jpg",	  
       "valoracion": 3
     },
-    {
-      "idserie": 12,
-      "nombre": "Me llamo Earl",
-      "imagen": "https://pics.filmaffinity.com/my_name_is_earl_tv_series-192915475-large.jpg",	  
-      "valoracion": 4
-    },
+  {
+    "idserie": 12,
+    "nombre": "Me llamo Earl",
+    "imagen": "https://images-na.ssl-images-amazon.com/images/I/81bm9oX5iTL._SY445_.jpg",
+    "valoracion": 4
+  },
     {
       "idserie": 13,
       "nombre": "Las chicas del cable",

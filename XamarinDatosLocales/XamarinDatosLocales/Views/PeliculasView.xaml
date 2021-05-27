@@ -3,29 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinDatosLocales.Views.PeliculasView"
              xmlns:viewmodels="clr-namespace:XamarinDatosLocales.ViewModels"
-             xmlns:templates="clr-namespace:XamarinDatosLocales.Templates">
+             xmlns:templates="clr-namespace:XamarinDatosLocales.Templates"
+             xmlns:customcontrols="clr-namespace:XamarinDatosLocales.CustomControls"
+             x:Name="PagePeliculas">
     <ContentPage.BindingContext>
         <viewmodels:PeliculasViewModel/>
     </ContentPage.BindingContext>    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="PELICULAS" FontSize="40"
+        <Grid>
+            <Image Opacity="1"
+                   Source="fondo2.jpg"
+                   Aspect="AspectFill"/>
+            <Label Text="{Binding MiPropiedad}"/>
+            <StackLayout>
+                <Label Text="PELICULAS" FontSize="40" 
                    TextColor="Blue"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <ListView ItemsSource="{Binding Peliculas}"
+                <ListView ItemsSource="{Binding Peliculas}"
+                      SelectedItem="{Binding PeliculaSeleccionada}"
                       x:Name="listviewPeliculas"
                       RowHeight="160"
                       BackgroundColor="Transparent"
                       SeparatorColor="AliceBlue">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <templates:TemplatePeliculaListview/>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <customcontrols:CustomViewCellControl                                SelectedItemBackgroundColor="White">                                <StackLayout Spacing="0" Padding="0">
+                                    <Grid Style="{DynamicResource CardStyle}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="90"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="5"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" 
+                       Source="{Binding Poster}"/>
+                                        <StackLayout Grid.Column="1" Spacing="0" Padding="0,5">
+                                            <Label Text="{Binding Titulo}" 
+                           Style="{DynamicResource TituloLabelStyle}"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="4" 
+                             HorizontalOptions="End" Padding="0" VerticalOptions="End">
+                                            <Button Style="{DynamicResource SocialStyle}"
+                            FontAttributes="Bold"
+                            Text="Escenas"
+Command="{Binding BindingContext.ShowEscenas
+    , Source={x:Reference PagePeliculas}}"/>
+                                        </StackLayout>
+                                    </Grid>
+
+                                    <BoxView BackgroundColor="Black" HeightRequest="0.5"></BoxView>
+
+                                    <Grid Style="{DynamicResource TituloOriginalStyle}">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding TituloOriginal}" 
+                           FontSize="20"
+                           Style="{DynamicResource TituloOriginalLabelStyle}"/>
+                                        </StackLayout>
+                                    </Grid>
+
+                                    <BoxView Style="{DynamicResource ShadowStyle}"></BoxView>
+                                </StackLayout>                            </customcontrols:CustomViewCellControl>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

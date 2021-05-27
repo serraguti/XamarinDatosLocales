@@ -19,8 +19,11 @@
                 </StackLayout>
                 <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="4" 
                              HorizontalOptions="End" Padding="0" VerticalOptions="End">
-                    <Label Text="144 Followers" FontAttributes="Bold" 
-                           Style="{DynamicResource SocialStyle}"/>
+                    <Button Style="{DynamicResource SocialStyle}"
+                            FontAttributes="Bold"
+                            Text="Escenas"
+Command="{Binding BindingContext.ShowEscenas
+    , Source={x:Reference PagePeliculas}}"/>
                 </StackLayout>
             </Grid>
 

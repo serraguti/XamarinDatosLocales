@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 using XamarinDatosLocales.Base;
 using XamarinDatosLocales.Models;
 using XamarinDatosLocales.Repositories;
+using XamarinDatosLocales.Views;
 
 namespace XamarinDatosLocales.ViewModels
 {
@@ -26,6 +28,39 @@ namespace XamarinDatosLocales.ViewModels
             {
                 this._Peliculas = value;
                 OnPropertyChanged("Peliculas");
+            }
+        }
+
+        private Pelicula _PeliculaSeleccionada;
+        public Pelicula PeliculaSeleccionada
+        {
+            get { return this._PeliculaSeleccionada; }
+            set
+            {
+                this._PeliculaSeleccionada = value;
+                OnPropertyChanged("PeliculaSeleccionada");
+            }
+        }
+
+        public Command ShowEscenas
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    //INSTANCIAMOS EL VIEWMODEL
+                    PeliculaViewModel viewmodel =
+                    new PeliculaViewModel();
+                    //ENLAZAMOS LOS DATOS DEL VIEWMODEL
+                    //CON LA PELI SELECCIONADA
+                    viewmodel.Pelicula = this.PeliculaSeleccionada;
+                    //CREAMOS LA VISTA A MOSTRAR
+                    EscenasView view = new EscenasView();
+                    //ENLAZAMOS LA VISTA CON SU VIEWMODEL
+                    view.BindingContext = viewmodel;
+                    //MOSTRAMOS LA VISTA COMO MODAL
+Application.Current.MainPage.Navigation.PushModalAsync(view);
+                });
             }
         }
     }
